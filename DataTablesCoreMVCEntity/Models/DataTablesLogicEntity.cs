@@ -1,4 +1,5 @@
-﻿using DataTablesCoreMVCEntity.Data;
+﻿// Copyright (c) Peter Schlosser. All rights reserved.  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+using DataTablesCoreMVCEntity.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;

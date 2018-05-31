@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// Copyright (c) Peter Schlosser. All rights reserved.  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace DataTablesCoreMVCEntity.Models

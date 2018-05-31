@@ -6,6 +6,8 @@ A guide to integration of DataTables components from this repository into your M
   * ASP.NET Core 1.1 or 2.0 MVC Web Application Project
   * Entity Framework Core (version appropriate for your ASP.NET Core MVC version)
 
+TL;DR *To integrate the features demonstrated into an existing project, we copy/import five (5) class files into the Models folder, and add a View and some Controller references to DataTables and the target data class.*
+
 ## Steps to Integrate
 1. Install Bower Packages
    * Bootstrap 3.3.7

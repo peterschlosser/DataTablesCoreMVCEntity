@@ -1,7 +1,7 @@
 # DataTablesCoreMVCEntity
 jQuery DataTables Demo using ASP.NET Core MVC and Entity Framework
 
-A simple and basic demonstration of [jQuery DataTables](https://datatables.net/) within the ASP.NET Core MVC Framework using Entity Framework Core.
+A simple and concise demonstration of the [jQuery DataTables plugin](https://datatables.net/) within the ASP.NET Core MVC Framework using Entity Framework Core.
 
 A basic<sup name="a1">[1](#f1)</sup> demonstration including sample data and the references one needs to build, demonstrate and [integrate](DataTablesCoreMVCEntity/README.md) DataTables into your project.
 
@@ -25,4 +25,4 @@ When facing the need to use jQuery DataTables in a Core MVC project, this author
 Some examples were too out of date to compile or function in the current (1.1-2.0) MVC modeling.  Others took the simple DataTables usage and morphed it into complex examples and projects that either failed to build or failed to function.
 Efforts were made to keep the code lean, the project and examples simple, while providing a basic<sup>[1](#f1)</sup> demonstration that can be built, observed and tested with minimal effort to the reader.
 
-<b id="f1">1</b> By *basic* example, we refer to one demonstrating the paging, sorting and filtering features. [↩](#a1)
+<b id="f1">1</b> *basic* demonstration refers to the paging, sorting and filtering features of the [DataTables plugin](https://datatables.net/). [↩](#a1)

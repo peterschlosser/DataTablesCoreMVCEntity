@@ -3,7 +3,7 @@ jQuery DataTables Demo using ASP.NET Core MVC and Entity Framework
 
 A simple and basic demonstration of [jQuery DataTables](https://datatables.net/) within the ASP.NET Core MVC Framework using Entity Framework Core.
 
-A complete demonstration including sample data and the references one needs to build, demonstrate and integrate DataTables into your project.
+A complete demonstration including sample data and the references one needs to build, demonstrate and [integrate](DataTablesCoreMVCEntity/README.md) DataTables into your project.
 
 ## Key Components
   * A ModelBinder to parse the application/x-www-form-urlencoded input from the DataTables AJAX request into the appropriate DataTablesRequest Class Model (data structure) and greatly simplify the interface between Controller (to which the AJAX requests route) and the BLL (Business Logic Layer).

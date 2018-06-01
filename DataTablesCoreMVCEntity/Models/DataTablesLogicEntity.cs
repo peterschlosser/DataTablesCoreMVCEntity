@@ -9,36 +9,39 @@ namespace DataTablesCoreMVCEntity.Models
     public class DataTablesLogicEntity
     {
         /// <summary>
-        /// Handles the DataTablesRequest for the Customer Database using Entity Framework and LINQ-to-SQL
+        /// Handles generic DataTablesRequest for the TSource Database using Entity Framework and LINQ-to-SQL
         /// </summary>
         /// <param name="request">DataTables Ajax Request</param>
-        /// <returns>DataTablesResponse</returns>
-        public static async Task<DataTablesResponse<Customer>> DataTablesRequestAsync(DataTablesRequest request, CustomerContext dbContext)
+        /// <returns>DataTablesResponse for TSource data</returns>
+        public static async Task<DataTablesResponse<TSource>> DataTablesRequestAsync<TSource>(
+            DataTablesRequest request, DbSet<TSource> dbSet) where TSource : class
         {
             // prepare the data and count queries
-            var totalQuery = dbContext.Customers;
-            var filterQuery = totalQuery
-                .WhereDataTables(request);
-            var dataQuery = filterQuery
-                .OrderByDataTables(request)
-                .Skip(request.Start)
-                .Take(request.Length);
+            var totalQuery = dbSet;
+            var filterQuery = totalQuery.WhereDataTables(request);
+            var dataQuery = filterQuery.OrderByDataTables(request).Skip(request.Start).Take(request.Length);
 
-            // run the queries and gather the data
-            var total = totalQuery.Count();
-            var filtered = filterQuery.Count();
-            var data = await dataQuery.ToListAsync();
-            var error = request.Error;
-
-            // prepare and return the repsonse
-            return new DataTablesResponse<Customer>()
+            // run the queries and return the response
+            return new DataTablesResponse<TSource>()
             {
                 Draw = request.Draw,
-                RecordsTotal = total,
-                RecordsFiltered = filtered,
-                Data = data,
-                Error = error,
+                RecordsTotal = totalQuery.Count(),
+                RecordsFiltered = filterQuery.Count(),
+                Data = await dataQuery.ToListAsync(),
+                Error = request.Error,
             };
+        }
+
+        /// <summary>
+        /// Handles the DataTablesRequest for the Customer Database
+        /// </summary>
+        /// <param name="request">DataTables Ajax Request</param>
+        /// <param name="dbContext">CustomerContext for Customer data</param>
+        /// <returns>DataTablesResponse for Customer</returns>
+        public static async Task<DataTablesResponse<Customer>> DataTablesCustomerRequestAsync(DataTablesRequest request, CustomerContext dbContext)
+        {
+            var dbset = dbContext.Customers;
+            return await DataTablesRequestAsync(request, dbset);
         }
     }
 }

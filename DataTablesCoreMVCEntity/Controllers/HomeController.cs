@@ -17,7 +17,7 @@ namespace DataTablesCoreMVCEntity.Controllers
 
         public async Task<JsonResult> AjaxData([FromBody] DataTablesRequest request)
         {
-            var response = await DataTablesLogicEntity.DataTablesRequestAsync(request, _context);
+            var response = await DataTablesLogicEntity.DataTablesCustomerRequestAsync(request, _context);
             return new JsonResult(response);
         }
 

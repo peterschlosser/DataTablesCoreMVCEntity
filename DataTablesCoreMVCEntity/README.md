@@ -15,7 +15,7 @@ TL;DR *To integrate the features demonstrated into an existing project, we copy/
    * DataTables 1.10.16
    * DataTables.Net for Bootstrap 2.1.1
    
-   This guide presumes Bootstrap and jQuery are installed, and the appropriate stylesheets and javascript are already included by Views/Shared/_Layout.cshtml.
+   This guide presumes Bootstrap and jQuery are installed, and the appropriate stylesheets and javascript are already included by Views/Shared/_Layout.cshtml.  This is typically the case when creating new ASP.NET Core MVC Web Applications in VS2017.
 
 2. Create a DataTables View using Customers.cshtml as a guide.  Note key components of this View.cshtml file:
    * References to the datatables.net-bs stylesheet
@@ -28,7 +28,7 @@ TL;DR *To integrate the features demonstrated into an existing project, we copy/
 3. Database Presumptions - this guide is not intended as a tutorial of MVC or Entity Frameworks and presumes:
    * A database table (containing the data you want DataTables to display) already exists in your database
    * A public class model exists (generally in your Models folder) for your target database table.
-   * A DbContext-derived class exists and functions with Entity Frameworks to read data from our database table
+   * A DbContext-derived class exists and functions with Entity Frameworks to read data from your database table
 
 4. Migrate/add the following classes in the repository Models folder into your project Models folder:
    1. DataTablesIQueryableExtensions.cs

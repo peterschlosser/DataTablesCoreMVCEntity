@@ -14,10 +14,10 @@ namespace DataTablesCoreMVCEntity.Models
         /// <param name="request">DataTables Ajax Request</param>
         /// <returns>DataTablesResponse for TSource data</returns>
         public static async Task<DataTablesResponse<TSource>> DataTablesRequestAsync<TSource>(
-            DataTablesRequest request, DbSet<TSource> dbSet) where TSource : class
+            DataTablesRequest request, DbSet<TSource> baseDbSet) where TSource : class
         {
             // prepare the data and count queries
-            var totalQuery = dbSet;
+            var totalQuery = baseDbSet;
             var filterQuery = totalQuery.WhereDataTables(request);
             var dataQuery = filterQuery.OrderByDataTables(request).Skip(request.Start).Take(request.Length);
 
